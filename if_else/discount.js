@@ -67,3 +67,27 @@ function calculateDiscountAmount(amount, discount) {
 // Example usage
 console.log(calculateDiscountAmount(5005, 5));  // 4755
 
+
+// best ways
+
+function getDiscount(amount) {
+    if (amount <= 5000) return 5;
+    if (amount <= 7000) return 10;
+    if (amount <= 9000) return 15;
+    return 20;
+}
+
+function calculateDiscountAmount(amount) {
+    if (typeof amount !== "number" || amount <= 0) {
+        throw new Error("Invalid amount. Must be a positive number.");
+    }
+
+    const discount = getDiscount(amount);
+    const discountAmount = Math.floor((amount * discount) / 100);
+
+    return amount - discountAmount;
+}
+
+console.log(calculateDiscountAmount(5005)); // 10% discount
+
+
