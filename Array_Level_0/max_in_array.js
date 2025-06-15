@@ -32,3 +32,8 @@ const copy_arr = [...arr]
 console.log(maxInArray(copy_arr))
 console.log(maxInArray1(copy_arr))
 
+
+// using reduce
+
+const newMax = copy_arr.reduce((max, curr) => curr > max ? curr : max)
+console.log("max", newMax)
