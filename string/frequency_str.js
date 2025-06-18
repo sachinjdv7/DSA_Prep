@@ -54,3 +54,18 @@ console.log(map)
 for (char of map) {
     console.log(char)
 }
+
+
+
+function frequencyMap(str) {
+    const map = new Map();
+
+    for (let char of str) {
+        map.set(char, (map.get(char) || 0) + 1);
+    }
+
+    return [...map]
+        .map(([char, count]) => `${char} appears ${count} time${count > 1 ? "s" : ""}`)
+        .join("\n");
+}
+console.log(frequencyMap("hello"))
