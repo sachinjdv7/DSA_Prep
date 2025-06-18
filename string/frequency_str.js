@@ -69,3 +69,30 @@ function frequencyMap(str) {
         .join("\n");
 }
 console.log(frequencyMap("hello"))
+
+
+/// always use this 
+
+function frequency(str) {
+    let map = new Map();
+
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+
+        if (map.has(char)) {
+            let currentCount = map.get(char);
+            map.set(char, currentCount + 1);
+        } else {
+            map.set(char, 1);
+        }
+    }
+
+    return map;
+}
+
+// To print the result in order
+let result = frequency("hello");
+
+for (let [char, count] of result) {
+    console.log(`${char} appears ${count} time${count > 1 ? 's' : ''}`);
+}
