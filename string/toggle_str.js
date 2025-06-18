@@ -35,4 +35,22 @@ function toggleString(str) {
 }
 console.log(toggleString("surraja"))
 
+function toggleString1(str) {
 
+    let toggle = ""
+
+    for (let char of str) {
+
+        if (char === char.toUpperCase()) {
+
+            toggle += char.toLowerCase()
+
+        } else {
+
+            toggle += char.toUpperCase()
+        }
+
+    }
+    return toggle
+}
+console.log(toggleString1("nitin"))
