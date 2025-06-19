@@ -30,3 +30,11 @@ LinkedList.prototype.insertAtEnd = function (data) {
 
     last.next = newNode
 }
+
+LinkedList.prototype.insertAt = function (prevNode, data) {
+
+    if (!prevNode) return "The preNode can not be null";
+
+    const newNode = new Node(data, prevNode.next)
+    prevNode.next = newNode
+}
