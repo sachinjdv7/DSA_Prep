@@ -116,3 +116,21 @@ LinkedList.prototype.printList = function () {
     }
     return res.join(" -> ")
 }
+
+// little challenging 
+// reverse linked list
+
+LinkedList.prototype.reverse = function () {
+
+    let current = this.head;
+    let prev = null;
+    let next = null;
+
+    while (current) {
+        next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
+    }
+    this.head = prev
+}
