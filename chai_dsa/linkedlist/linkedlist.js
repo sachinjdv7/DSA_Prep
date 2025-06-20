@@ -97,6 +97,7 @@ LinkedList.prototype.search = function (key) {
 
     while (current) {
         if (current.data === key) return true
+        current = current.next
     }
     return false
 }
