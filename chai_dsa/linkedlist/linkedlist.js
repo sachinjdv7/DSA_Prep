@@ -100,3 +100,18 @@ LinkedList.prototype.search = function (key) {
     }
     return false
 }
+
+// traversal
+
+LinkedList.prototype.printList = function () {
+
+    if (!this.head) return "List is empty";
+
+    let current = this.head;
+    let res = [];
+    while (current) {
+        res.push(current.data)  // add data to list
+        current = current.next;  // move to next node
+    }
+    return res.join(" -> ")
+}
