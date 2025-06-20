@@ -90,3 +90,13 @@ LinkedList.prototype.deleteByKey = function (key) {
     return `No node found with key: ${key}`
 }
 
+// search operation
+
+LinkedList.prototype.search = function (key) {
+    let current = this.head;
+
+    while (current) {
+        if (current.data === key) return true
+    }
+    return false
+}
