@@ -64,24 +64,26 @@ class List {
     // delete by key
 
     deleteByKey(key) {
-        if (!this.head) return "nothing to delete";
-
+        if (!this.head) {
+            return "nothing to delete"
+        }
+        // data found at head
         if (this.head.data === key) {
-            this.head = this.head.next;
-            return;
+            this.head = this.head.next
+            return `delete node with key: ${key}`
         }
 
+        //if we have traverse to all list
         let current = this.head;
-
         while (current.next) {
             if (current.next.data === key) {
-                current.next = current.next.next;
-                return;
+                current.next = current.next.next
+                return `delete node with key: ${key}`
             }
-            current = current.next;
+            current = current.next
         }
 
-        return `No node found with key ${key}`;
+        return `no node found with key: ${key}`
     }
 
 
@@ -111,7 +113,7 @@ list.insertAtLast(20)
 // list.deleteLast()
 // list.deleteLast()
 // list.deleteByKey(30)
-list.deleteByKey(20)
+console.log(list.deleteByKey(5))
 
 console.log(list.printList())
 
