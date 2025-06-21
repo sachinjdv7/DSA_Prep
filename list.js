@@ -31,7 +31,7 @@ class List {
     }
 
     insertAtGivenNode(prevNode, data) {
-        if (!prevNode) "Previous node can not be null"
+        if (!prevNode) return "Previous node can not be null"
         let newNode = new Node(data, prevNode.next)
         prevNode.next = newNode
     }
@@ -113,7 +113,7 @@ list.insertAtLast(20)
 // list.deleteLast()
 // list.deleteLast()
 // list.deleteByKey(30)
-console.log(list.deleteByKey(5))
+console.log(list.deleteByKey(10))
 
 console.log(list.printList())
 
