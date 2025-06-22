@@ -77,3 +77,19 @@ DoublyLinkedList.prototype.deleteFirstNode = function () {
     }
 
 }
+
+DoublyLinkedList.prototype.deleteLastNode = function () {
+
+    if (!this.tail) return "DLL is empty"
+
+    if (this.head === this.tail) {
+
+        this.head = null
+        this.tail = null
+
+    } else {
+
+        this.tail = this.tail.prev
+        this.tail.next = null
+    }
+}
