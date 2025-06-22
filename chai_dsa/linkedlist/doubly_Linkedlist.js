@@ -27,3 +27,18 @@ DoublyLinkedList.prototype.insertAtBeginning = function (data) {
         this.tail = newNode
     }
 }
+
+DoublyLinkedList.prototype.insertAtLast = function (data) {
+
+    let newNode = new Node(data, null, this.tail)
+
+    if (this.tail) {
+        this.tail.next = newNode
+    }
+
+    this.tail = newNode
+
+    if (!this.head) {
+        this.head = newNode
+    }
+}
