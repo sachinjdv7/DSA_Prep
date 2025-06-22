@@ -42,3 +42,18 @@ DoublyLinkedList.prototype.insertAtLast = function (data) {
         this.head = newNode
     }
 }
+
+DoublyLinkedList.prototype.insertAfter = function (prevNode, data) {
+
+    let newNode = new Node(data, prevNode.next, prevNode)
+
+    if (prevNode.next) {
+        prevNode.next.prev = newNode
+    }
+
+    prevNode.next = newNode
+
+    if (!newNode.next) {
+        this.tail = newNode
+    }
+}
