@@ -57,3 +57,23 @@ DoublyLinkedList.prototype.insertAfter = function (prevNode, data) {
         this.tail = newNode
     }
 }
+
+DoublyLinkedList.prototype.deleteFirstNode = function () {
+
+    if (!this.head) {
+        return "Nothing to delete"
+    }
+
+    if (this.head === this.tail) {
+
+        this.head = null
+        this.tail = null
+
+
+    } else {
+
+        this.head = this.head.next;
+        this.head.prev = null
+    }
+
+}
