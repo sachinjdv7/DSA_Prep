@@ -12,3 +12,18 @@ class DoublyLinkedList {
         this.tail = null
     }
 }
+
+DoublyLinkedList.prototype.insertAtBeginning = function (data) {
+
+    let newNode = new Node(data, this.head, null);
+
+    if (this.head) {
+        this.head.prev = newNode
+    }
+
+    this.head = newNode
+
+    if (!this.tail) {
+        this.tail = newNode
+    }
+}
