@@ -78,6 +78,17 @@ DoublyLinkedList.prototype.deleteFirstNode = function () {
 
 }
 
+DoublyLinkedList.prototype.printList = function () {
+    console.log("HEAD:", this.head?.data, "| TAIL:", this.tail?.data);
+    let current = this.head
+    let arr = []
+    while (current) {
+        arr.push(current.data)
+        current = current.next
+    }
+    return arr.join("<- ->")
+}
+
 DoublyLinkedList.prototype.deleteLastNode = function () {
 
     if (!this.tail) return "DLL is empty"
