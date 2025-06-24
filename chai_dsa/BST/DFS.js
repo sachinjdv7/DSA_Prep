@@ -7,7 +7,7 @@ class Node {
     }
 }
 
-const depthFirstTraverse = (root){
+const depthFirstTraverse = (root) => {
     const values = [];
     const stack = [root];
 
