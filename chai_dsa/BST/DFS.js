@@ -30,4 +30,18 @@ const depthFirstTraverse = (root) => {
 
 }
 
+const recursiveDFT = (root) => {
+
+    if (root === null) {
+        return
+    }
+
+    const lefValues = recursiveDFT(root.left)
+    const rightValues = recursiveDFT(root.right)
+
+    // return [root.key, lefValues, rightValues]
+
+    return [root.key, ...lefValues, ...rightValues]
+}
+
 
