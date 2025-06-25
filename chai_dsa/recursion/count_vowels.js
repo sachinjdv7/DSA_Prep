@@ -1,13 +1,11 @@
 
 function isVowel(char) {
 
-    char = char.toLowerCase()
+    char = char.toLowerCase();
 
-    vowel = ["a", "e", "i", "o", "u"]
+    let vowel = ["a", "e", "i", "o", "u"];
 
-    if (vowel.includes(char)) return true
-
-    return false
+    return vowel.includes(char);
 }
 
 function vowelCount(string) {
@@ -23,4 +21,26 @@ function vowelCount(string) {
 }
 
 console.log(vowelCount("sachin"))
+
+// recursive
+
+function recursiveStringCount(string, stringLength) {
+
+    console.log(`Length: ${stringLength}, current Sting: ${string.substring(0, stringLength)} `)
+
+    if (stringLength === 1) {
+        console.log("Base case got hit here");
+        console.log("Base case value: ", Number(isVowel(string[0])))
+
+        return Number(isVowel(string[0]))
+    }
+
+    // return recursiveStringCount(string, stringLength - 1) + Number(isVowel(string[stringLength - 1]))
+    let result = recursiveStringCount(string, stringLength - 1) + Number(isVowel(string[stringLength - 1]))
+    console.log(`Count after checking ${string[stringLength - 1]} : ${result}`)
+    return result
+}
+
+let myString = "hello"
+console.log(recursiveStringCount(myString, myString.length));
 
