@@ -9,6 +9,39 @@
  
  */
 
+function findOcc(arr, findme, currIndex) {
+
+    while (currIndex < arr.length) {
+        if (arr[currIndex] === findme) {
+
+            return currIndex
+        }
+        currIndex += 1
+    }
+    return -1
+}
+
+console.log(findOcc([3, 4, 1, 8, 1, 7], 1, 0))
+
+
+// recursive
+
+function recursiveOcc(arr, findme, currIndex) {
+
+    if (arr.length === currIndex) {
+        return -1
+    }
+
+    if (arr[currIndex] === findme) {
+        return currIndex
+    }
+
+    return recursiveOcc(arr, findme, currIndex + 1)
+}
+
+console.log(recursiveOcc([3, 4, 8, 1, 7], 1, 0))
+
+
 function findMe(arr, ele) {
 
     for (let i = 0; i < arr.length; i++) {
