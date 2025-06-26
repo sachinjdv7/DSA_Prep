@@ -20,3 +20,35 @@ function gcd(num1, num2) {
 }
 
 console.log(gcd(88, 96))
+
+
+// iterative
+
+function gcdIterative(num1, num2) {
+    const num1Factor = []
+    const num2Factor = []
+
+    for (let i = 1; i <= num1; i++) {
+        if (num1 % i === 0) {
+            num1Factor.push(i)
+        }
+    }
+
+    for (let i = 1; i <= num2; i++) {
+        if (num2 % i === 0) {
+            num2Factor.push(i)
+        }
+    }
+
+    let common = [];
+    for (let i = 0; i < num1Factor.length; i++) {
+        if (num2Factor.includes(num1Factor[i])) {
+            common.push(num1Factor[i]);
+        }
+    }
+
+    return Math.max(...common)
+
+}
+
+console.log(gcdIterative(42, 18))
