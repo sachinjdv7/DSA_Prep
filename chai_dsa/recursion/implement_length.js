@@ -10,3 +10,12 @@ function length(str) {
 }
 
 console.log(length("sachin"))
+
+function recursive(str) {
+
+    if (str === "") return 0
+
+    return 1 + recursive(str.substring(1))
+}
+
+console.log(recursive("sachin"))
