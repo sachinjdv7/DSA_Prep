@@ -15,3 +15,22 @@ function removeTAS(str) {
 }
 
 console.log(removeTAS("  sa  ch i   n "))
+
+// recursive
+
+function recursiveRTAS(inputString) {
+
+    if (inputString.length === 0) return ""
+
+    const FirstChar = inputString[0];
+    const restOfString = inputString.slice(1)
+
+    if (FirstChar === " " || FirstChar === "\t") {
+        return recursiveRTAS(restOfString)
+    }
+
+
+    return FirstChar + recursiveRTAS(restOfString)
+}
+
+console.log(recursiveRTAS("  sa  ch i   n "))
