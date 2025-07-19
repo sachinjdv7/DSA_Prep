@@ -15,3 +15,19 @@ console.log(set.delete(10))
 for (let ele of set) {
     console.log(ele)
 }
+
+// problem
+
+const arr = [10, 45, 18, 9, 9, 10, 45, 10, 10]
+
+let set1 = new Set();
+
+for (let i = 0; i < arr.length; i++) {
+
+    if (set1.has(arr[i])) {
+        set1.delete(arr[i])
+    } else {
+        set1.add(arr[i])
+    }
+}
+console.log(set1)
