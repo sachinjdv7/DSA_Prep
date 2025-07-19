@@ -31,3 +31,8 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 console.log(set1)
+
+// remove duplicates
+
+let set5 = new Set(arr)
+console.log([...set5])
