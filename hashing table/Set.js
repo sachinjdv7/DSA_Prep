@@ -36,3 +36,14 @@ console.log(set1)
 
 let set5 = new Set(arr)
 console.log([...set5])
+
+
+
+
+function reverseWordOrder(str) {
+
+    return str.split(" ").reverse().join(" ")
+
+}
+
+console.log(reverseWordOrder("Hello World"))
