@@ -27,3 +27,16 @@ function depthFSIterative(graphs, start) {
         }
     }
 }
+
+// recursive version
+
+function depthFSRecursive(graphs, start, visited = new Set()) {
+
+    if (!visited.has(start)) {
+        visited.add(start)
+
+        for (const neighbour of graphs[start]) {
+            depthFSRecursive(graphs, neighbour, visited)
+        }
+    }
+}
